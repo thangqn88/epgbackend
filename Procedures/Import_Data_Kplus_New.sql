@@ -349,10 +349,8 @@ IF v_check_running = 0 THEN
 		AND Is_Kplus_Channel(t.channel_id) <= 0
 		;
 	   COMMIT;
-	SET SQL_SAFE_UPDATES = 1;
 
 	# -- Udate status
-	SET SQL_SAFE_UPDATES = 0;
 	   UPDATE Epg_record t INNER JOIN tmp_epg_record tmp
 	   ON t.broadcast_id = tmp.broadcast_id
 	   SET t.status = '1',
